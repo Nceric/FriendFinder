@@ -15,7 +15,7 @@ const friendsArray = {
       ],
   
 
-  "name":"Jeff",
+  "name":"Jeff, vending machine guy",
   "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
   "scores":[
       5,
@@ -30,7 +30,7 @@ const friendsArray = {
       1
     ],
 
-    "name":"Literal God",
+    "name":"Dan, department supervisor",
     "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
     "scores":[
         5,
