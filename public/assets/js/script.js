@@ -6,6 +6,7 @@ var possibleTwoValue = 0;
 
 
 $("#subButton").on("click", function () {
+    alert("hi")
     answerSelected = $("option:selected");
 
     for (let i = 0; i < friendMatched.length; i++) {
@@ -15,7 +16,7 @@ $("#subButton").on("click", function () {
             possibleFriendTwo = friendMatched[i];
             for (let j = 0; j < answerSelected.length; j++) {
                 possibleOneValue += Math.abs(parseInt(possibleFriendOne.scores[j]) - parseInt(answerSelected[j].value));
-                possibleTwoValue += Math.abs(parseInt(possibleFriendTwo.scores[j]) - parseInt(answerSelected[j].value));
+                // possibleTwoValue += Math.abs(parseInt(possibleFriendTwo.scores[j]) - parseInt(answerSelected[j].value));
             };
             if (possibleOneValue > possibleTwoValue) {
                 possibleFriendOne = possibleFriendTwo;
