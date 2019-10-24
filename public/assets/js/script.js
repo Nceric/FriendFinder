@@ -1,36 +1,36 @@
-var answerSelected;
-var possibleFriendOne = "";
-var possibleOneValue = 0;
-var possibleFriendTwo = "";
-var possibleTwoValue = 0;
+var answersGiven;
+var friendResultOne = "";
+var friendOneValue = 0;
+var friendResultTwo = "";
+var friendResultTwo = 0;
 
 
 $("#subButton").on("click", function () {
-    alert("hi")
-    answerSelected = $("option:selected");
+    
+    answersGiven = $("option:selected");
 
-    for (let i = 0; i < friendMatched.length; i++) {
-        if (possibleFriendOne === "") {
-            possibleFriendOne = friendMatched[i];
+    for (let i = 0; i < friendFound.length; i++) {
+        if (friendResultOne === "") {
+            friendResultOne = friendFound[i];
         } else {
-            possibleFriendTwo = friendMatched[i];
-            for (let j = 0; j < answerSelected.length; j++) {
-                possibleOneValue += Math.abs(parseInt(possibleFriendOne.scores[j]) - parseInt(answerSelected[j].value));
-                // possibleTwoValue += Math.abs(parseInt(possibleFriendTwo.scores[j]) - parseInt(answerSelected[j].value));
+            friendResultTwo = friendFound[i];
+            for (let j = 0; j < answersGiven.length; j++) {
+                friendOneValue += Math.abs(parseInt(friendResultOne.scores[j]) - parseInt(answersGiven[j].value));
+                // friendResultTwo += Math.abs(parseInt(friendResultTwo.scores[j]) - parseInt(answersGiven[j].value));
             };
-            if (possibleOneValue > possibleTwoValue) {
-                possibleFriendOne = possibleFriendTwo;
+            if (friendOneValue > friendResultTwo) {
+                friendResultOne = friendResultTwo;
             };
-            possibleOneValue = 0;
-            possibleTwoValue = 0;
+            friendOneValue = 0;
+            friendResultTwo = 0;
         }
     };
     $("#surveyBody").hide();
     var friendCard = $(".container").append(
         `<div class="card w-50 m-auto">
-                <img class="card-img" src=${possibleFriendOne.photo} alt="friendimg">
+                <img class="card-img" src=${friendResultOne.photo} alt="friendimg">
                 <div class="card-img-overlay">
-                    <h1 class="card-title">${possibleFriendOne.name}</h1>
+                    <h1 class="card-title">${friendResultOne.name}</h1>
                 </div>
         </div>` 
     );
